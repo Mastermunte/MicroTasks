@@ -1,0 +1,26 @@
+body {
+	background-color: #dedede;
+}
+
+body > div {
+	width: 220px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #eeeeee;
+}
+
+h1 {
+	font-size: 20px;
+	text-align: center;
+}
+
+input[type="text"] {
+	margin: 15px 10px;
+	display: inline-block;
+	width: 75px;
+	height: 25px;
+	background-color: #dddddd;
+	border: 1px solid gray;
+	outline: none;
+}
