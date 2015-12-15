@@ -1,0 +1,13 @@
+body > div {
+	width: 220px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #efefef;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 20px;
+	text-align: center;
+}
