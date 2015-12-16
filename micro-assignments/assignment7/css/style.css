@@ -1,0 +1,97 @@
+body {
+	background-color: #dfdfdf;
+}
+
+body > div {
+	width: 300px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #efefef;
+	margin: 0 auto;
+}
+
+body > div:first-child {
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 20px;
+	text-align: center;
+	color: #76EE00;
+	background-color: black;
+	margin: 0;
+	padding: 20px 0;
+	border: 1px solid #76EE00;
+	border-radius: 6px;
+}
+
+input[type="text"] {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 20px 0;
+	outline: none;
+	background-color: #989898;
+	border: 1px solid gray;
+	padding-left: 10px;
+}
+
+#chatbox {
+	height: 400px;
+	width: 100%;
+	background-color: black;
+	border: 2px solid #76EE00;
+	border-radius: 10px;
+	overflow-y: scroll;
+}
+
+#button {
+	display: inline-block;
+	vertical-align: middle;
+	float: right;
+	margin: 20px 0;
+	width: 75px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	text-align: center;
+	background-color: #989898;
+	color: white;
+}
+
+#input::-webkit-input-placeholder { 
+	color: white;
+} 
+#input {
+	border: 1px solid gray;
+	border-radius: 5px;
+	color: white;
+}
+
+.messagebox {
+	margin: 10px;
+}
+
+.message {
+	display: inline-block;
+	color: #76EE00;
+	font-size: 16px;
+}
+
+.name {
+	display: inline-block;
+	color: #76EE00;
+	font-size: 12px;
+}
+
+.picture {
+	display: inline-block;
+	vertical-align: top;
+	background: url('imgs/avatar.jpg') no-repeat 0 0;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+#messagebox {
+	display: none
+}
