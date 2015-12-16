@@ -1,0 +1,30 @@
+body > div {
+	width: 220px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #efefef;
+	margin: 0 auto;
+}
+
+body > div:first-child {
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 20px;
+	text-align: center;
+}
+
+input[type="range"] {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+span {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 20px;
+}
