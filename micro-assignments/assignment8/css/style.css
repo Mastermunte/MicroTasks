@@ -1,0 +1,48 @@
+body {
+	background-color: #dfdfdf;
+}
+
+body > div {
+	width: 400px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #efefef;
+	margin: 0 auto;
+}
+
+body > div:first-child {
+	margin-bottom: 20px;
+	width: 300px;
+}
+
+h1 {
+	font-size: 20px;
+	text-align: center;
+}
+
+.container > div:last-child {
+	display: inline-block;
+	text-align: center;
+}
+
+input,
+select {
+	outline: none;
+	border: 1px solid gray;
+	padding: 5px 10px;
+	margin: 0 10px;
+}
+
+select {
+	width: 90px;
+	-webkit-appearance: none;
+}
+
+input {
+	width: 50px;
+}
+
+#result {
+	margin-left: 20px;
+}
