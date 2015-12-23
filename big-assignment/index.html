@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8">
+        <title>GoDev Sprint III Macro-Assignment</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/html" id="template">
+            <td><%=name%></td>
+            <td><%=city%></td>
+            <td><%=rating%></td>
+            <td><a href="#" class="edit-btn">Edit</a> / <a href="#" class="remove-btn">Remove</a></td>
+        </script>
+        <div>
+            <div class="col-md-3">
+                <form class="form-horizontal" id="form">
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+                        <div class="col-sm-6 undisplayed" id="nameNotify">Please input a valid name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCityVisited" class="col-sm-5 control-label txt-left">City Visited:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputCityVisited">
+                        </div>
+                        <div class="col-sm-9 undisplayed" id="cityNotify">Please input a valid city</div>
+                    </div>
+                     <div class="form-group">
+                        <label for="inputRating" class="col-sm-2 control-label" id="ratingButton">Rating:</label>
+                        <div class="col-sm-10 starContainerParent">
+                            <div class="starContainer" id="starContainer">
+                                <div class ="star" data-value="1" style="color:gray">&#9733;</div>
+                                <div class ="star" data-value="2" style="color:gray">&#9733;</div>
+                                <div class ="star" data-value="3" style="color:gray">&#9733;</div>
+                                <div class ="star" data-value="4" style="color:gray">&#9733;</div>
+                                <div class ="star" data-value="5" style="color:gray">&#9733;</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 txt-center undisplayed" id="starsNotify">Please select a rating</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> More than a weekend
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-default">Add!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5 margin-adjust-left">
+                <table class="table table-bordered table-striped table-hover" id="table">
+                    <thead>
+                        <tr>
+                            <th><span class="caret"></span>Name</th>
+                            <th><span class="caret"></span>City</th>
+                            <th><span class="caret"></span>Rating</th>
+                            <th><span class="caret"></span>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total: <span id="count">0</span>
+                            </td>
+                            <td colspan="2">Avg. Rating: <span id="average">0/5</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div style="height:300px; border:1px solid #ededed; border-radius: 4px;" id="map">
+                    <script type="text/javascript">
+                        function initMap() {
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                center: {lat: 44.453802, lng: 26.104725},
+                                zoom: 16
+                          });
+                        }
+                    </script>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJd3EEV04iyI392-cMM1hvzcHz_FD8Gm8&callback=initMap">
+                    </script>
+                </div>
+            </div>
+        </div>   
+        <script src="js/template-engine.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
