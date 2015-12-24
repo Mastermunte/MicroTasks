@@ -87,16 +87,17 @@ var updateAverage = function (arr) {
   }
 }
 
-var populateTable = function (store) {
+var populate = function (store) {
   tableBody.innerHTML = '';
   for (var i = 0; i < store.length; i++) {
     var data = store[i];
     createRow(data);
+    createMarker(data, map);
   }
 }
 
 var render = function (store) {
-  populateTable(store);
+  populate(store);
   updateTotal(store);
   updateAverage(store);
 }
@@ -120,13 +121,65 @@ var nameIsValid = function (data) {
   return isValid;
 }
 
-var cityIsValid = function (data) {
+
+
+
+/*var cityIsValid = function (data) {
   var isValid = true;
   if (data.city.length < 2) {
     isValid = false;
   }
   return isValid;
+}*/
+
+
+
+
+function createMarker(data, map) {
+  var address = data.city;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({'address': address}, function (results) {
+    map.setCenter(results[0].geometry.location);
+    var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+  });
 }
+
+var cityIsValid = function (data) {
+  var isValid = true;
+  var address = data.city;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({'address': address}, function (status) {
+    if (status !== google.maps.GeocoderStatus.OK) {
+      isValid = false;
+    }
+    console.log(isValid);
+  })
+  console.log(isValid);
+  return isValid;
+}
+
+
+/*function createMarker(map) {
+  var geocoder = new google.maps.Geocoder();
+  var address = inputCity.value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}*/
+
+
+
 
 form.addEventListener("submit", function (event){
   event.preventDefault();
@@ -136,6 +189,7 @@ form.addEventListener("submit", function (event){
   if (nameIsValid(data)==false) {
     inputName.classList.add("invalid");
     inputName.focus();
+    inputName.select();
     document.getElementById("nameNotify").classList.add("displayed");
   }
   else {
@@ -146,6 +200,7 @@ form.addEventListener("submit", function (event){
   if (cityIsValid(data)==false) {
     inputCity.classList.add("invalid");
     inputCity.focus();
+    inputCity.select();
     document.getElementById("cityNotify").classList.add("displayed");
   }
   else {
@@ -163,11 +218,10 @@ form.addEventListener("submit", function (event){
   }
   
   if (nameIsValid(data) && cityIsValid(data) && (rating != 0)) {
-    form.reset();
-    resetStars();
-    
     store.push(data);
     render(store);
+    form.reset();
+    resetStars();
   }
 
   return false;
