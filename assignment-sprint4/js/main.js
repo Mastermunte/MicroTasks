@@ -32,9 +32,17 @@ var onCancel = function() {
 var getFormData = function() {
   return {
     name: $('#inputCity').val(),
-    visited: $('#checkbox').is(':checked'),
-    stars: $("#inputStars").val()
+    visited: checkTransform(),
+    stars: parseInt($("#inputStars").val())
   };
+}
+
+var checkTransform = function() {
+  if($('#checkbox').is(':checked')) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 var setFormData = function(data) {
@@ -46,7 +54,7 @@ var setFormData = function(data) {
 var drawTable = function(store) {
   store.getAll().then(function(data) {
     var $table = $('#table tbody').empty();
-    $.each(data, function() {
+    $.each(data.list, function() {
       $table.append(tmpl('template', this));
     });
     
@@ -65,7 +73,7 @@ var attachEvents = function() {
     store.delete(id).then(function() {
       drawTable(store);
     });
-  
+
     return false;
   });
   $('#table a.edit').click(function() {
@@ -82,42 +90,9 @@ var attachEvents = function() {
   });
 }
 
-var getRandom = function(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
-var populate = function() {
-  store.add({
-    name: 'Seattle',
-    visited: true,
-    stars: getRandom(1, 5)
-  });
-  store.add({
-    name: 'Portland',
-    visited: false,
-    stars: getRandom(1, 5)
-  });
-  store.add({
-    name: 'San Francisco',
-    visited: true,
-    stars: getRandom(1, 5)
-  });
-  store.add({
-    name: 'Mountain View',
-    visited: false,
-    stars: getRandom(1, 5)
-  });
-  store.add({
-    name: 'Palo Alto',
-    visited: true,
-    stars: getRandom(1, 5)
-  });
 
-  drawTable(store);
-  emptyForm();
-}
-
-populate();
+drawTable(store);
 
 formDOM.on("submit", onSubmit);
 
