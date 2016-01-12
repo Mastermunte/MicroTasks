@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8">
+        <title>GoDev Sprint IV Assignment</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4 bordered">
+                <form class="form-horizontal" id="form">
+                    <div class="form-group">
+                        <label for="inputCity" class="col-sm-5 control-label txt-left">City Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-sm-9 undisplayed" id="cityNotify">Please input a valid city</div>
+                    </div>
+                     <div class="form-group">
+                        <label for="inputRating" class="col-sm-2 control-label txt-left" id="ratingButton">Stars:</label>
+                        <div class="col-sm-10 starContainerParent">
+                            <input type="text" class="form-control" id="inputStars">
+                        </div>
+                        <div class="col-sm-9 txt-center undisplayed" id="starsNotify">Please select a rating</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="checkbox">Visited</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-default transition saveBtn">Save</button>
+                            <button type="submit" class="btn btn-default transition updateBtn">Update</button>
+                            <button class="btn btn-default transition cancelBtn">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped table-hover" id="table">
+                    <thead>
+                        <tr>
+                            <th><span class="caret"></span>City</th>
+                            <th><span class="caret"></span>Stars</th>
+                            <th><span class="caret"></span>Visited</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                <div class="col-md-12">
+                    <p class="txt-center">Page <a href="#"><<</a> 1 of 5 <a href=#>>></a></p>
+                </div>
+            </div>
+        </div>
+        <script type="text/html" id="template">
+        <tr data-id="<%=id%>">
+            <td><%=name%></td>
+            <td><%=stars%></td>
+            <td><%=visited%></td>
+            <td><a href="#" class="edit">Edit</a> / <a href="#" class="del">Remove</a></td>
+        </tr>
+        </script>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/stars.jquery.js"></script>
+        <script src="js/template-engine.js"></script>
+        <script src="js/store.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

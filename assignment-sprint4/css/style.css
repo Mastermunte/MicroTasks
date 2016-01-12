@@ -1,0 +1,103 @@
+body {
+	margin-top: 50px;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+.btn {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.bordered {
+	border: 1px solid #ddd;
+}
+
+.transition {
+	transition: 0.4s;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.form-group .txt-center {
+	text-align: center;
+}
+
+.form-group .txt-left {
+	text-align: left;
+}
+
+.starContainerParent {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: -20px;
+	width: 160px;
+}
+
+.stars-container {
+    font-size: 25px;
+}
+
+.stars-container .star {
+    cursor: pointer;
+}
+
+.star.hover {
+    color: red;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.caret {
+	margin-right: 5px;
+}
+
+.editingForm .saveBtn {
+	display: none;
+}
+
+.editingForm .updateBtn {
+	display: inline-block;
+}
+
+.editingForm .cancelBtn {
+	display: inline-block;
+}
+
+.updateBtn {
+	display: none;
+}
+
+.cancelBtn {
+	display: none;
+}
+
+.invalid:focus {
+	border-color: #D91F1F;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
+}
+
+.invalidStars {
+	border: 1px solid #D91F1F;
+	width: 135px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
+}
+
+.undisplayed {
+	visibility: hidden;
+	font-size: 10px;
+}
+
+.displayed {
+	visibility: visible;
+	color: #D91F1F;
+	font-size: 10px;
+}
