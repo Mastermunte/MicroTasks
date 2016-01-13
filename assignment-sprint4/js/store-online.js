@@ -9,7 +9,7 @@ var store = (function () {
        getAll: function () {
            return new Promise(function (resolve, reject) {
               $.ajax({
-                url: url,
+                url: url + "?page=" + currentPage,
                 type: 'GET',
                 headers: headers
               }).done(resolve).fail(reject);

@@ -18,14 +18,12 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputCity">
                         </div>
-                        <div class="col-sm-9 undisplayed" id="cityNotify">Please input a valid city</div>
                     </div>
                      <div class="form-group">
                         <label for="inputRating" class="col-sm-2 control-label txt-left" id="ratingButton">Stars:</label>
                         <div class="col-sm-10 starContainerParent">
                             <input type="text" class="form-control" id="inputStars">
                         </div>
-                        <div class="col-sm-9 txt-center undisplayed" id="starsNotify">Please select a rating</div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-10">
@@ -43,14 +41,37 @@
                     </div>
                 </form>
             </div>
+            <div class="error invisible">
+                <p class="message"></p>
+            </div>
             <div class="col-md-6">
                 <table class="table table-bordered table-striped table-hover" id="table">
                     <thead>
                         <tr>
-                            <th><span class="caret"></span>City</th>
-                            <th><span class="caret"></span>Stars</th>
-                            <th><span class="caret"></span>Visited</th>
-                            <th>Actions</th>
+                            <th>
+                                <div class="align-mid margin5">
+                                    <div><a href="#" class="caret caret-reversed"></a></div>
+                                    <div><a href="#" class="caret"></a></div>
+                                </div>
+                                <span class="align-mid">City</span>
+                            </th>
+                            <th>
+                                <div class="align-mid margin5">
+                                    <div><a href="#" class="caret caret-reversed"></a></div>
+                                    <div><a href="#" class="caret"></a></div>
+                                </div>
+                                <span class="align-mid">Stars</span>
+                            </th>
+                            <th>
+                                <div class="align-mid margin5">
+                                    <div><a href="#" class="caret caret-reversed"></a></div>
+                                    <div><a href="#" class="caret"></a></div>
+                                </div>
+                                <span class="align-mid">Visited</span>
+                            </th>
+                            <th>
+                                <span class="align-mid align-top margin5">Actions</span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,7 +81,14 @@
                     </tfoot>
                 </table>
                 <div class="col-md-12">
-                    <p class="txt-center">Page <a href="#"><<</a> 1 of 5 <a href=#>>></a></p>
+                    <p class="txt-center">
+                        <span>Page </span>
+                        <a href="#" class="previousPage"><<</a>
+                        <span class="currentPage"></span>
+                        <span>of</span>
+                        <span class="totalPages"></span>
+                        <a href="#" class="nextPage">>></a>
+                    </p>
                 </div>
             </div>
         </div>

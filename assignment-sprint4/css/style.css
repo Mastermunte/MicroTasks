@@ -54,8 +54,11 @@ body {
 	margin-bottom: 10px;
 }
 
-.caret {
-	margin-right: 5px;
+.caret-reversed {
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
 }
 
 .editingForm .saveBtn {
@@ -78,26 +81,36 @@ body {
 	display: none;
 }
 
-.invalid:focus {
-	border-color: #D91F1F;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
+.align-mid {
+	display: inline-block;
+	vertical-align: middle;
 }
 
-.invalidStars {
-	border: 1px solid #D91F1F;
-	width: 135px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(217, 31, 31, .6);
+.align-top {
+	transform:translateY(-50%);
 }
 
-.undisplayed {
-	visibility: hidden;
-	font-size: 10px;
+.margin5 {
+	margin-right: 10px;
 }
 
-.displayed {
-	visibility: visible;
-	color: #D91F1F;
-	font-size: 10px;
+.error {
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	z-index: 5;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	font-size: 18px;
+	font-weight: bolder;
+	background-color: white;
+	border: 2px solid #f52a14;
+	text-align: center;
+	padding: 5px 30px;
+}
+
+.error p {
+	margin: 0;
 }
