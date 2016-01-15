@@ -6,10 +6,10 @@ var store = (function () {
   };
 
   return {
-       getAll: function () {
+       getAll: function (page) {
            return new Promise(function (resolve, reject) {
               $.ajax({
-                url: url + "?page=" + currentPage,
+                url: url + "?page=" + page,
                 type: 'GET',
                 headers: headers
               }).done(resolve).fail(reject);
