@@ -29,6 +29,8 @@
         <div class="overlay undisplayed">
             <div class="overlay-box">
                 <button class="overlay-cancel">X</button>
+                <button class="overlay-prev"><<</button>
+                <button class="overlay-next">>></button>
                 <img class="overlay-image" alt="Map">
             </div>
         </div>
@@ -38,7 +40,7 @@
             <div class="col-md-4 bordered">
                 <form class="form-horizontal" id="form">
                     <div class="form-group">
-                        <label for="input-city" class="col-sm-5 control-label txt-left">City Name:</label>
+                        <label for="input-city" class="col-sm-5 control-label txt-left">Name:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="input-city">
                         </div>
@@ -58,9 +60,9 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-default transition save-btn">Save</button>
-                            <button type="submit" class="btn btn-default transition update-btn">Update</button>
-                            <button class="btn btn-default transition cancel-btn">Cancel</button>
+                            <button type="submit" class="btn btn-default transition add-btn">Add</button>
+                            <button type="submit" class="btn btn-default undisplayed update-btn">Update</button>
+                            <button class="btn btn-default undisplayed cancel-btn">Cancel</button>
                         </div>
                     </div>
                 </form>
@@ -104,21 +106,25 @@
                 <div class="col-md-12">
                     <p class="txt-center" id="pagination-bar">
                         <span>Page </span>
-                        <a href="#" class="previous-page"><<</a>
-                        <span class="current-page"></span>
-                        <span>of</span>
-                        <span class="total-pages"></span>
-                        <a href="#" class="next-page">>></a>
+                        <span><< </span>
+                        <a href="#" class="first-page transition">1</a>
+                        <a href="#" class="previous-half transition">...</a>
+                        <a href="#" class="previous-page transition"></a>
+                        <a href="#" class="current-page transition"></a>
+                        <a href="#" class="next-page transition"></a>
+                        <a href="#" class="next-half transition">...</a>
+                        <a href="#" class="total-pages transition"></a>
+                        <span>>> </span>
                     </p>
                 </div>
             </div>
         </div>
         <script type="text/html" id="template">
         <tr data-id="<%=id%>">
-            <td class="city"><%=name%></td>
-            <td><%=stars%></td>
+            <td class="city transition"><%=name%></td>
+            <td class="rating-star"><%=stars%></td>
             <td><%=visited%></td>
-            <td><a href="#" class="edit">Edit</a> / <a href="#" class="del">Remove</a></td>
+            <td><a href="#" class="edit transition">Edit</a> / <a href="#" class="del transition">Remove</a></td>
         </tr>
         </script>
         <script src="js/jquery-2.1.4.min.js"></script>

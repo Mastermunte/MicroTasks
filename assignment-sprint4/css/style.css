@@ -61,21 +61,6 @@ border: none;
 	-ms-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
 }
-.editing-form .save-btn {
-	display: none;
-}
-.editing-form .update-btn {
-	display: inline-block;
-}
-.editing-form .cancel-btn {
-	display: inline-block;
-}
-.update-btn {
-	display: none;
-}
-.cancel-btn {
-	display: none;
-}
 .align-mid {
 	display: inline-block;
 	vertical-align: middle;
@@ -144,5 +129,44 @@ border: none;
 	background-color: transparent;
 	border: 1px solid gold;
 	border-radius: 2px;
+	color: gold;
+}
+.overlay-prev {
+	position: absolute;
+	left: -75px;
+	top: 50%;
+	transform: translatey(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	background-color: transparent;
+	border: none;
+	color: gold;
+	font-size: 40px;
+}
+.overlay-next {
+	position: absolute;
+	right: -75px;
+	top: 50%;
+	transform: translatey(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	background-color: transparent;
+	border: none;
+	color: gold;
+	font-size: 40px;
+}
+.current-page {
+	font-size: 20px;
+	color:#115895;
+}
+#pagination-bar a:focus {
+	color: #337ab7;
+}
+#pagination-bar span {
+	text-transform: uppercase;
+}
+.city:hover {
 	color: gold;
 }
