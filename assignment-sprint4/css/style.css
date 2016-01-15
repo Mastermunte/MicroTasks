@@ -9,8 +9,8 @@ body{
   margin-top: 60px;
   font-family: "Federo", sans-serif;
 }
-a:hover,
-a:focus {
+body a:hover,
+body a:focus {
 	color: gold;
 	text-decoration: none;
 }
@@ -163,6 +163,9 @@ border: none;
 }
 #pagination-bar a:focus {
 	color: #337ab7;
+}
+#pagination-bar a:hover {
+	color: gold;
 }
 #pagination-bar span {
 	text-transform: uppercase;

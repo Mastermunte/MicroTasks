@@ -276,6 +276,15 @@ $(document).ready(function() {
     return false;
   });
 
+  DOMpaginationBar.on("click", ".previous-indicator", function() {
+    if(currentPage > 1) {
+      currentPage--;
+      drawTable(store, currentPage);
+    }
+
+    return false;
+  });
+
   DOMpaginationBar.on("click", ".first-page", function() {
     currentPage = 1;
     drawTable(store, currentPage);
@@ -318,6 +327,15 @@ $(document).ready(function() {
   DOMpaginationBar.on("click", ".total-pages", function() {
     currentPage = totalPages;
     drawTable(store, currentPage);
+
+    return false;
+  });
+
+  DOMpaginationBar.on("click", ".next-indicator", function() {
+    if(currentPage < totalPages) {
+      currentPage++;
+      drawTable(store, currentPage);
+    }
 
     return false;
   });
